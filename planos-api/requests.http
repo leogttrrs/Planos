@@ -1,0 +1,52 @@
+### 1. CRIAR um novo plano de filme
+POST http://localhost:8080/planos
+Content-Type: application/json
+
+{
+  "nome": "Assistir Duna: Parte 2",
+  "categoria": "FILMES",
+  "status": "NAO_INICIADO",
+  "dataPlanejada": "2025-10-20",
+  "observacao": "Ver no cinema com a namorada!"
+}
+
+### 2. CRIAR um novo plano de viagem
+POST http://localhost:8080/planos
+Content-Type: application/json
+
+{
+  "nome": "Viagem para Gramado",
+  "categoria": "VIAGENS",
+  "status": "EM_ANDAMENTO",
+  "dataPlanejada": "2025-12-15"
+}
+
+### 3. LISTAR todos os planos
+GET http://localhost:8080/planos
+
+
+### 4. FILTRAR planos por categoria
+GET http://localhost:8080/planos?categoria=VIAGENS
+
+
+### 5. BUSCAR plano pelo ID 1
+GET http://localhost:8080/planos/2
+
+
+### 6. ATUALIZAR o plano de ID 1 para CONCLUIDO
+PUT http://localhost:8080/planos/1
+Content-Type: application/json
+
+{
+  "nome": "Assistir Duna: Parte 2",
+  "categoria": "FILMES",
+  "status": "CONCLUIDO",
+  "dataPlanejada": "2025-10-20",
+  "dataConclusao": "2025-10-22",
+  "nota": 10,
+  "observacao": "Filme incrível! Vimos no IMAX."
+}
+
+
+### 7. DELETAR o plano de ID 2
+DELETE http://localhost:8080/planos/2
